@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متجري | تسوق أونلاين بثقة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__eyebrow">تسوق جديد كل يوم</span>
+          <h1 class="hero__title">كل اللي محتاجه، في مكان واحد</h1>
+          <p class="hero__subtitle">
+            تشكيلة مختارة بعناية من المنتجات، بأسعار واضحة وتوصيل يوصلك أينما كنت.
+          </p>
+          <div class="hero__actions">
+            <a href="shop.html" class="btn btn--primary">تصفح المتجر</a>
+            <a href="#featured" class="btn btn--ghost">الأكثر مبيعاً</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__visual-price">٪<span>20</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">تسوق حسب الفئة</h2>
+        </div>
+        <div class="categories-row" id="categories-row">
+          <!-- يُملأ بـ JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">منتجات مميزة</h2>
+          <a href="shop.html" class="section-header__link">عرض كل المنتجات ←</a>
+        </div>
+        <div class="products-grid" id="featured-products">
+          <!-- يُملأ بـ JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

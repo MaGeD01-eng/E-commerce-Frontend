@@ -1,0 +1,72 @@
+/* ====================================
+    DESIGN TOKENS — هوية المتجر البصرية
+   ==================================== */
+
+:root {
+  /* الألوان الأساسية */
+    --color-bg: #FAFAF8;
+    --color-bg-alt: #F1F0EA;
+    --color-surface: #FFFFFF;
+    --color-text: #16161A;
+    --color-text-secondary: #6B6B6F;
+    --color-border: #E5E3DD;
+
+  /* لون التمييز (Accent) */
+    --color-accent: #FF4D2E;
+    --color-accent-hover: #E6431F;
+    --color-accent-soft: #FFE9E3;
+
+  /* ألوان الحالة */
+    --color-success: #1A7F4E;
+    --color-success-soft: #E3F4EA;
+    --color-error: #D32F2F;
+    --color-error-soft: #FCE8E8;
+    --color-warning: #B8860B;
+    --color-warning-soft: #FBF1DD;
+
+  /* الخطوط */
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+  /* أحجام الخط */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.75rem;
+    --text-4xl: 3.75rem;
+
+  /* المسافات */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+
+  /* زوايا الانحناء (نخليها صغيرة عشان طابع "متجر حقيقي" مش قالب AI) */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --radius-full: 999px;
+
+  /* الظلال */
+    --shadow-sm: 0 1px 2px rgba(22, 22, 26, 0.06);
+    --shadow-md: 0 4px 12px rgba(22, 22, 26, 0.08);
+    --shadow-lg: 0 12px 32px rgba(22, 22, 26, 0.12);
+
+  /* الانتقالات */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+
+  /* عرض المحتوى الأقصى */
+    --container-max: 1280px;
+
+  /* ارتفاع النافبار (هنستخدمه في حسابات أخرى لاحقاً) */
+    --navbar-height: 72px;
+}

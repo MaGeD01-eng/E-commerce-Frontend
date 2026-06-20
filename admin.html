@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة التحكم | متجري</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main class="admin-page">
+    <div class="container">
+      <div class="admin-header">
+        <h1 class="admin-header__title">لوحة التحكم</h1>
+        <p class="admin-header__subtitle">إدارة المنتجات، الفئات، والمستخدمين</p>
+      </div>
+
+      <div class="admin-tabs">
+        <button class="admin-tab is-active" data-tab="products">المنتجات</button>
+        <button class="admin-tab" data-tab="categories">الفئات</button>
+        <button class="admin-tab" data-tab="users">المستخدمين</button>
+      </div>
+
+      <!-- تبويب المنتجات -->
+      <section class="admin-panel is-active" id="panel-products">
+        <div class="admin-toolbar">
+          <span class="admin-toolbar__title">كل المنتجات</span>
+          <button class="btn btn--primary btn--sm" id="add-product-btn">+ إضافة منتج</button>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الصورة</th>
+                <th>الاسم</th>
+                <th>الفئة</th>
+                <th>السعر</th>
+                <th>الكمية</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="products-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- تبويب الفئات -->
+      <section class="admin-panel" id="panel-categories">
+        <div class="admin-toolbar">
+          <span class="admin-toolbar__title">كل الفئات</span>
+          <button class="btn btn--primary btn--sm" id="add-category-btn">+ إضافة فئة</button>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>اسم الفئة</th>
+                <th>تاريخ الإنشاء</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="categories-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- تبويب المستخدمين -->
+      <section class="admin-panel" id="panel-users">
+        <div class="admin-toolbar">
+          <span class="admin-toolbar__title">كل المستخدمين</span>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>البريد الإلكتروني</th>
+                <th>الدور</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="users-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modal: إضافة / تعديل منتج -->
+  <div class="modal-overlay" id="product-modal-overlay">
+    <div class="modal modal--wide">
+      <h2 class="modal__title" id="product-modal-title">إضافة منتج</h2>
+
+      <form class="modal-form" id="product-form">
+        <div class="form-group">
+          <label for="product-title">اسم المنتج</label>
+          <input type="text" id="product-title" name="title" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-price">السعر (ج.م)</label>
+            <input type="number" id="product-price" name="price" min="0" step="0.01" required />
+          </div>
+          <div class="form-group">
+            <label for="product-quantity">الكمية المتاحة</label>
+            <input type="number" id="product-quantity" name="quantity" min="0" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="product-category">الفئة</label>
+          <select id="product-category" name="category" required></select>
+        </div>
+
+        <div class="form-group" id="product-images-group">
+          <label>الصور (حتى 5 صور، 2MB لكل صورة كحد أقصى)</label>
+          <div class="file-drop" id="file-drop-zone">
+            اضغط هنا لاختيار الصور أو اسحبها هنا
+            <input type="file" id="product-images-input" accept="image/*" multiple />
+          </div>
+          <div class="file-preview" id="file-preview"></div>
+        </div>
+
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" id="cancel-product-btn">إلغاء</button>
+          <button type="submit" class="btn btn--primary" id="save-product-btn">حفظ المنتج</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: إضافة / تعديل فئة -->
+  <div class="modal-overlay" id="category-modal-overlay">
+    <div class="modal">
+      <h2 class="modal__title" id="category-modal-title">إضافة فئة</h2>
+
+      <form class="modal-form" id="category-form">
+        <div class="form-group">
+          <label for="category-title">اسم الفئة</label>
+          <input type="text" id="category-title" name="title" required />
+        </div>
+
+        <div class="modal__actions">
+          <button type="button" class="btn btn--ghost" id="cancel-category-btn">إلغاء</button>
+          <button type="submit" class="btn btn--primary" id="save-category-btn">حفظ الفئة</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

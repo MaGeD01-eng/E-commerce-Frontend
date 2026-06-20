@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المتجر | متجري</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main>
+    <header class="shop-header">
+      <div class="container">
+        <h1 class="shop-header__title">المتجر</h1>
+        <p class="shop-header__subtitle">تصفح كل منتجاتنا واختر ما يناسبك</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="shop-toolbar">
+        <div class="categories-row shop-toolbar__filters" id="shop-categories"></div>
+        <span class="shop-toolbar__count" id="shop-count"></span>
+      </div>
+
+      <div class="products-grid" id="shop-products"></div>
+
+      <div class="pagination" id="shop-pagination"></div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
